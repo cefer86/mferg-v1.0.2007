@@ -1,0 +1,174 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x69017aeb, pid=744, tid=3448
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_09-b01 mixed mode, sharing)
+# Problematic frame:
+# C  [vticd.dll+0x17aeb]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02f4a858):  JavaThread "J3D-Renderer-1" [_thread_in_native, id=3448]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0a350000
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x00000230, EDX=0x05d6b498
+ESP=0x034ef7d4, EBP=0x034ef814, ESI=0x0a34fffc, EDI=0x05d6be68
+EIP=0x69017aeb, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x034ef7d4)
+0x034ef7d4:   35010e20 000998a0 00000000 00099910
+0x034ef7e4:   00000c00 0000000c 00000001 00099968
+0x034ef7f4:   05d6b498 00000c80 00001400 000999c8
+0x034ef804:   03571c38 000998a0 0a34f62c 00000003
+0x034ef814:   034ef82c 69016868 35010e20 000a7ad8
+0x034ef824:   5f13c513 000ea390 034ef858 5f146710
+0x034ef834:   35010e20 00000001 00000000 02f4a858
+0x034ef844:   26b33a30 00000001 001e01d4 35010e20 
+
+Instructions: (pc=0x69017aeb)
+0x69017adb:   8b 4d d0 8b 75 f8 8b 7d e0 83 f9 00 74 21 8b 06
+0x69017aeb:   8b 5e 04 89 07 89 5f 04 8b 46 08 8b 5e 0c 89 47 
+
+
+Stack: [0x034b0000,0x034f0000),  sp=0x034ef7d4,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [vticd.dll+0x17aeb]
+C  [vticd.dll+0x16868]
+C  [OPENGL32.dll+0x26710]
+C  [GDI32.dll+0x34fb3]
+C  [j3dcore-ogl.dll+0x4564]
+j  javax.media.j3d.Canvas3D.swapBuffers(JJI)I+0
+j  javax.media.j3d.Renderer.doWork(J)V+330
+j  javax.media.j3d.J3dThread.run()V+19
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x86e84]
+V  [jvm.dll+0xddead]
+V  [jvm.dll+0x86d55]
+V  [jvm.dll+0x86ab2]
+V  [jvm.dll+0xa16b2]
+V  [jvm.dll+0x10f4ac]
+V  [jvm.dll+0x10f47a]
+C  [MSVCRT.dll+0x2a3b0]
+C  [kernel32.dll+0xb683]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  javax.media.j3d.Canvas3D.swapBuffers(JJI)I+0
+j  javax.media.j3d.Renderer.doWork(J)V+330
+j  javax.media.j3d.J3dThread.run()V+19
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02f69c28 JavaThread "J3D-InputDeviceScheduler-1" [_thread_blocked, id=3720]
+  0x02f5c808 JavaThread "J3D-SoundSchedulerUpdateThread-1" [_thread_blocked, id=3664]
+  0x0999fb60 JavaThread "J3D-RenderStructureUpdateThread-1" [_thread_blocked, id=2896]
+  0x0999f008 JavaThread "J3D-BehaviorScheduler-1" [_thread_blocked, id=3216]
+  0x09960d78 JavaThread "J3D-TransformStructureUpdateThread-1" [_thread_blocked, id=2596]
+  0x09992ab0 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-1" [_thread_blocked, id=236]
+  0x09992898 JavaThread "J3D-SoundStructureUpdateThread-1" [_thread_blocked, id=1848]
+  0x03050820 JavaThread "J3D-GeometryStructureUpdateThread-1" [_thread_blocked, id=2120]
+  0x030503c8 JavaThread "J3D-BehaviorStructureUpdateThread-1" [_thread_blocked, id=3932]
+  0x00035e28 JavaThread "DestroyJavaVM" [_thread_blocked, id=3100]
+  0x02f4ece0 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=3332]
+  0x02f2ae28 JavaThread "AWT-Shutdown" [_thread_blocked, id=300]
+=>0x02f4a858 JavaThread "J3D-Renderer-1" [_thread_in_native, id=3448]
+  0x0305b408 JavaThread "J3D-MasterControl-1" [_thread_in_vm, id=1400]
+  0x00cfd1e0 JavaThread "J3D-NotificationThread" [_thread_blocked, id=2756]
+  0x00cfcc58 JavaThread "J3D-TimerThread" [_thread_blocked, id=2796]
+  0x02f39e00 JavaThread "J3D-RenderingAttributesStructureUpdateThread" [_thread_blocked, id=3608]
+  0x02f2be60 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3760]
+  0x02f23cf8 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3740]
+  0x00ce0fe8 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1784]
+  0x00cdfc70 JavaThread "CompilerThread0" daemon [_thread_blocked, id=3892]
+  0x00cdf020 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3876]
+  0x00cd9cb8 JavaThread "Finalizer" daemon [_thread_blocked, id=2824]
+  0x0003f8c0 JavaThread "Reference Handler" daemon [_thread_blocked, id=1860]
+
+Other Threads:
+  0x00cb6ef0 VMThread [id=528]
+  0x00cdee00 WatcherThread [id=4092]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 490K [0x22b20000, 0x22bc0000, 0x23000000)
+  eden space 512K,  83% used [0x22b20000, 0x22b8a998, 0x22ba0000)
+  from space 64K, 100% used [0x22bb0000, 0x22bc0000, 0x22bc0000)
+  to   space 64K,   0% used [0x22ba0000, 0x22ba0000, 0x22bb0000)
+ tenured generation   total 1408K, used 403K [0x23000000, 0x23160000, 0x26b20000)
+   the space 1408K,  28% used [0x23000000, 0x23064f50, 0x23065000, 0x23160000)
+ compacting perm gen  total 8192K, used 2663K [0x26b20000, 0x27320000, 0x2ab20000)
+   the space 8192K,  32% used [0x26b20000, 0x26db9fd8, 0x26dba000, 0x27320000)
+    ro space 8192K,  67% used [0x2ab20000, 0x2b07e5d8, 0x2b07e600, 0x2b320000)
+    rw space 12288K,  47% used [0x2b320000, 0x2b8c87f0, 0x2b8c8800, 0x2bf20000)
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.exe
+0x7c910000 - 0x7c9c6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c901000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e4c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\MSVCRT.dll
+0x6d730000 - 0x6d8cb000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\client\jvm.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f37000 	C:\WINDOWS\system32\GDI32.dll
+0x76b00000 - 0x76b2e000 	C:\WINDOWS\system32\WINMM.dll
+0x66500000 - 0x6650a000 	C:\WINDOWS\system32\wbsys.dll
+0x66600000 - 0x66617000 	C:\Archivos de programa\Stardock\Object Desktop\WindowBlinds\wbhelp.dll
+0x5d160000 - 0x5d167000 	C:\WINDOWS\system32\serwvdrv.dll
+0x5b480000 - 0x5b487000 	C:\WINDOWS\system32\umdmxfrm.dll
+0x6d2f0000 - 0x6d2f8000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\hpi.dll
+0x76bb0000 - 0x76bbb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d700000 - 0x6d70c000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\verify.dll
+0x6d370000 - 0x6d38d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.dll
+0x6d720000 - 0x6d72f000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\zip.dll
+0x6d070000 - 0x6d1d9000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\awt.dll
+0x72f80000 - 0x72fa6000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x76340000 - 0x7635d000 	C:\WINDOWS\system32\IMM32.dll
+0x774b0000 - 0x775ed000 	C:\WINDOWS\system32\ole32.dll
+0x66000000 - 0x6608e000 	C:\Archivos de programa\Stardock\Object Desktop\WindowBlinds\WBlind.dll
+0x7c9d0000 - 0x7d1ef000 	C:\WINDOWS\system32\SHELL32.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x58c30000 - 0x58cca000 	C:\WINDOWS\system32\COMCTL32.dll
+0x773a0000 - 0x774a3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x5b150000 - 0x5b188000 	C:\WINDOWS\system32\UXTHEME.DLL
+0x76330000 - 0x76335000 	C:\WINDOWS\system32\msimg32.dll
+0x736e0000 - 0x73729000 	C:\WINDOWS\system32\ddraw.dll
+0x73b40000 - 0x73b46000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x746b0000 - 0x746fb000 	C:\WINDOWS\system32\MSCTF.dll
+0x6d3d0000 - 0x6d3d6000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\jawt.dll
+0x10000000 - 0x10030000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\j3dcore-ogl.dll
+0x5f120000 - 0x5f1ec000 	C:\WINDOWS\system32\OPENGL32.dll
+0x5fea0000 - 0x5fec1000 	C:\WINDOWS\system32\GLU32.dll
+0x6d2b0000 - 0x6d2ef000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\fontmanager.dll
+0x69000000 - 0x692be000 	C:\WINDOWS\system32\vticd.dll
+
+VM Arguments:
+java_command: NoiseArray2
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;E:\QUARTUS II\QUARTUS WEB EDITION\bin;E:\QUARTUS II\QUARTUS WEB EDITION\bin;E:\MATLAB7\bin\win32;
+USERNAME=user
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 10 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 1 (cores per cpu 1, threads per core 1) family 6 model 10 stepping 0, cmov, cx8, fxsr, mmx, sse, mmxext, 3dnowext, 3dnow
+
+Memory: 4k page, physical 458224k(34600k free), swap 1082644k(383536k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_09-b01) for windows-x86, built on Sep  7 2006 13:59:31 by "java_re" with MS VC++ 6.0
+

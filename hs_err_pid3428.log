@@ -1,0 +1,270 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x69195640, pid=3428, tid=944
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_09-b01 mixed mode, sharing)
+# Problematic frame:
+# C  [vticd.dll+0x195640]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x037d7f28):  JavaThread "J3D-Renderer-1" [_thread_in_native, id=944]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0000000c
+
+Registers:
+EAX=0xffffff00, EBX=0x102925b8, ECX=0x00000326, EDX=0x000002d7
+ESP=0x0a45f6e8, EBP=0x0a45f708, ESI=0x00000068, EDI=0x0000000c
+EIP=0x69195640, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0a45f6e8)
+0x0a45f6e8:   690ace1c 101b9c60 101be2f0 102925b8
+0x0a45f6f8:   0000000c 101b9c60 00000000 3b010e67
+0x0a45f708:   0a45f748 6910537e 00000326 000002d7
+0x0a45f718:   00000068 ffffff00 00000000 00000100
+0x0a45f728:   101b9c60 00001ad7 10292b40 00001800
+0x0a45f738:   00001800 ffffff00 000002d7 00000326
+0x0a45f748:   0a45f7f8 691321f5 037d7f28 26c44840
+0x0a45f758:   26c44840 0629438b 00000100 00000000 
+
+Instructions: (pc=0x69195640)
+0x69195630:   00 00 00 00 00 04 32 06 f7 c7 07 00 00 00 74 09
+0x69195640:   89 07 81 c7 04 00 00 00 49 8b d9 c1 e9 01 74 12 
+
+
+Stack: [0x0a420000,0x0a460000),  sp=0x0a45f6e8,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [vticd.dll+0x195640]
+C  [vticd.dll+0x10537e]
+C  [vticd.dll+0x1321f5]
+j  javax.media.j3d.Canvas3D.textureclear(JIIFFFIIIILjavax/media/j3d/ImageComponent2DRetained;Z)V+0
+J  javax.media.j3d.Renderer.doWork(J)V
+j  javax.media.j3d.J3dThread.run()V+19
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x86e84]
+V  [jvm.dll+0xddead]
+V  [jvm.dll+0x86d55]
+V  [jvm.dll+0x86ab2]
+V  [jvm.dll+0xa16b2]
+V  [jvm.dll+0x10f4ac]
+V  [jvm.dll+0x10f47a]
+C  [MSVCRT.dll+0x2a3b0]
+C  [kernel32.dll+0xb683]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  javax.media.j3d.Canvas3D.textureclear(JIIFFFIIIILjavax/media/j3d/ImageComponent2DRetained;Z)V+0
+J  javax.media.j3d.Renderer.doWork(J)V
+j  javax.media.j3d.J3dThread.run()V+19
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0b355408 JavaThread "J3D-InputDeviceScheduler-10" [_thread_blocked, id=1380]
+  0x0b3d4808 JavaThread "J3D-SoundSchedulerUpdateThread-10" [_thread_blocked, id=1364]
+  0x038c1ab8 JavaThread "J3D-RenderStructureUpdateThread-10" [_thread_blocked, id=3900]
+  0x03a2fc60 JavaThread "J3D-BehaviorScheduler-10" [_thread_blocked, id=3768]
+  0x03787b60 JavaThread "J3D-TransformStructureUpdateThread-10" [_thread_blocked, id=1120]
+  0x03787008 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-10" [_thread_blocked, id=3812]
+  0x03783438 JavaThread "J3D-SoundStructureUpdateThread-10" [_thread_blocked, id=3808]
+  0x038f4008 JavaThread "J3D-GeometryStructureUpdateThread-10" [_thread_blocked, id=2224]
+  0x03daa5d8 JavaThread "J3D-BehaviorStructureUpdateThread-10" [_thread_blocked, id=2228]
+  0x037a5d18 JavaThread "J3D-InputDeviceScheduler-9" [_thread_blocked, id=3264]
+  0x037a5040 JavaThread "J3D-SoundSchedulerUpdateThread-9" [_thread_blocked, id=3260]
+  0x037a4368 JavaThread "J3D-RenderStructureUpdateThread-9" [_thread_blocked, id=3256]
+  0x037a3690 JavaThread "J3D-BehaviorScheduler-9" [_thread_blocked, id=3224]
+  0x037a29b8 JavaThread "J3D-TransformStructureUpdateThread-9" [_thread_blocked, id=3252]
+  0x037a1ce0 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-9" [_thread_blocked, id=3228]
+  0x037a1008 JavaThread "J3D-SoundStructureUpdateThread-9" [_thread_blocked, id=2660]
+  0x037a0330 JavaThread "J3D-GeometryStructureUpdateThread-9" [_thread_blocked, id=2496]
+  0x03802898 JavaThread "J3D-BehaviorStructureUpdateThread-9" [_thread_blocked, id=2456]
+  0x037c3368 JavaThread "J3D-InputDeviceScheduler-8" [_thread_blocked, id=3736]
+  0x037c26e8 JavaThread "J3D-SoundSchedulerUpdateThread-8" [_thread_blocked, id=2924]
+  0x037c1a68 JavaThread "J3D-RenderStructureUpdateThread-8" [_thread_blocked, id=1032]
+  0x037c0de8 JavaThread "J3D-BehaviorScheduler-8" [_thread_blocked, id=3804]
+  0x037c0168 JavaThread "J3D-TransformStructureUpdateThread-8" [_thread_blocked, id=3820]
+  0x037bf558 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-8" [_thread_blocked, id=3908]
+  0x037bea00 JavaThread "J3D-SoundStructureUpdateThread-8" [_thread_blocked, id=148]
+  0x037bdea8 JavaThread "J3D-GeometryStructureUpdateThread-8" [_thread_blocked, id=1068]
+  0x037bdbe0 JavaThread "J3D-BehaviorStructureUpdateThread-8" [_thread_blocked, id=1544]
+  0x03804fd8 JavaThread "J3D-InputDeviceScheduler-7" [_thread_blocked, id=4056]
+  0x03804408 JavaThread "J3D-SoundSchedulerUpdateThread-7" [_thread_blocked, id=4052]
+  0x038e7668 JavaThread "J3D-RenderStructureUpdateThread-7" [_thread_blocked, id=2148]
+  0x038e69b8 JavaThread "J3D-BehaviorScheduler-7" [_thread_blocked, id=3920]
+  0x038e5d08 JavaThread "J3D-TransformStructureUpdateThread-7" [_thread_blocked, id=3924]
+  0x038e5058 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-7" [_thread_blocked, id=3740]
+  0x038e43a8 JavaThread "J3D-SoundStructureUpdateThread-7" [_thread_blocked, id=2616]
+  0x038e3718 JavaThread "J3D-GeometryStructureUpdateThread-7" [_thread_blocked, id=3796]
+  0x038e3248 JavaThread "J3D-BehaviorStructureUpdateThread-7" [_thread_blocked, id=3800]
+  0x0b3d5c30 JavaThread "J3D-InputDeviceScheduler-6" [_thread_blocked, id=3772]
+  0x0b3d4fe0 JavaThread "J3D-SoundSchedulerUpdateThread-6" [_thread_blocked, id=1496]
+  0x03902270 JavaThread "J3D-RenderStructureUpdateThread-6" [_thread_blocked, id=3776]
+  0x03aac0c0 JavaThread "J3D-BehaviorScheduler-6" [_thread_blocked, id=3780]
+  0x0b43fe08 JavaThread "J3D-TransformStructureUpdateThread-6" [_thread_blocked, id=3708]
+  0x0b43f148 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-6" [_thread_blocked, id=3732]
+  0x0b4274a8 JavaThread "J3D-SoundStructureUpdateThread-6" [_thread_blocked, id=1396]
+  0x0b3cc728 JavaThread "J3D-GeometryStructureUpdateThread-6" [_thread_blocked, id=3176]
+  0x0b2e0a48 JavaThread "J3D-BehaviorStructureUpdateThread-6" [_thread_blocked, id=2668]
+  0x038fcc70 JavaThread "J3D-InputDeviceScheduler-5" [_thread_blocked, id=2956]
+  0x038fc008 JavaThread "J3D-SoundSchedulerUpdateThread-5" [_thread_blocked, id=2680]
+  0x039121e8 JavaThread "J3D-RenderStructureUpdateThread-5" [_thread_blocked, id=720]
+  0x03911510 JavaThread "J3D-BehaviorScheduler-5" [_thread_blocked, id=3452]
+  0x03910838 JavaThread "J3D-TransformStructureUpdateThread-5" [_thread_blocked, id=1552]
+  0x0390fc58 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-5" [_thread_blocked, id=1460]
+  0x0390ed70 JavaThread "J3D-SoundStructureUpdateThread-5" [_thread_blocked, id=332]
+  0x0390e098 JavaThread "J3D-GeometryStructureUpdateThread-5" [_thread_blocked, id=956]
+  0x037930a0 JavaThread "J3D-BehaviorStructureUpdateThread-5" [_thread_blocked, id=3884]
+  0x03791010 JavaThread "J3D-InputDeviceScheduler-4" [_thread_blocked, id=2528]
+  0x03897cf8 JavaThread "J3D-SoundSchedulerUpdateThread-4" [_thread_blocked, id=3668]
+  0x038970a0 JavaThread "J3D-RenderStructureUpdateThread-4" [_thread_blocked, id=856]
+  0x03896448 JavaThread "J3D-BehaviorScheduler-4" [_thread_blocked, id=1316]
+  0x038957f0 JavaThread "J3D-TransformStructureUpdateThread-4" [_thread_blocked, id=3544]
+  0x03894d28 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-4" [_thread_blocked, id=3336]
+  0x0b5d1780 JavaThread "J3D-SoundStructureUpdateThread-4" [_thread_blocked, id=1288]
+  0x0b5d0c28 JavaThread "J3D-GeometryStructureUpdateThread-4" [_thread_blocked, id=2976]
+  0x0b5d0960 JavaThread "J3D-BehaviorStructureUpdateThread-4" [_thread_blocked, id=1524]
+  0x038f8568 JavaThread "J3D-InputDeviceScheduler-3" [_thread_blocked, id=2072]
+  0x038f78b8 JavaThread "J3D-SoundSchedulerUpdateThread-3" [_thread_blocked, id=2936]
+  0x038f6c08 JavaThread "J3D-RenderStructureUpdateThread-3" [_thread_blocked, id=2932]
+  0x038f5f58 JavaThread "J3D-BehaviorScheduler-3" [_thread_blocked, id=2060]
+  0x038f52a8 JavaThread "J3D-TransformStructureUpdateThread-3" [_thread_blocked, id=2732]
+  0x0375be18 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-3" [_thread_blocked, id=3348]
+  0x0375b168 JavaThread "J3D-SoundStructureUpdateThread-3" [_thread_blocked, id=3392]
+  0x0375acd0 JavaThread "J3D-GeometryStructureUpdateThread-3" [_thread_blocked, id=2712]
+  0x0375d210 JavaThread "J3D-BehaviorStructureUpdateThread-3" [_thread_blocked, id=1092]
+  0x03b0f1d8 JavaThread "J3D-InputDeviceScheduler-2" [_thread_blocked, id=1408]
+  0x038231f0 JavaThread "J3D-SoundSchedulerUpdateThread-2" [_thread_blocked, id=888]
+  0x03a439d8 JavaThread "J3D-RenderStructureUpdateThread-2" [_thread_blocked, id=2400]
+  0x03a3fe18 JavaThread "J3D-BehaviorScheduler-2" [_thread_blocked, id=2404]
+  0x03a3f2c0 JavaThread "J3D-TransformStructureUpdateThread-2" [_thread_blocked, id=2676]
+  0x01505658 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-2" [_thread_blocked, id=3672]
+  0x03a5a6f8 JavaThread "J3D-SoundStructureUpdateThread-2" [_thread_blocked, id=2504]
+  0x03a5a3a0 JavaThread "J3D-GeometryStructureUpdateThread-2" [_thread_blocked, id=2452]
+  0x037ddbc8 JavaThread "J3D-BehaviorStructureUpdateThread-2" [_thread_blocked, id=2816]
+  0x038ad408 JavaThread "J3D-InputDeviceScheduler-1" [_thread_blocked, id=912]
+  0x03afe7e8 JavaThread "J3D-SoundSchedulerUpdateThread-1" [_thread_blocked, id=2540]
+  0x03a62e68 JavaThread "J3D-RenderStructureUpdateThread-1" [_thread_blocked, id=2672]
+  0x03a62ba0 JavaThread "J3D-BehaviorScheduler-1" [_thread_blocked, id=1416]
+  0x03a4ead0 JavaThread "J3D-TransformStructureUpdateThread-1" [_thread_blocked, id=808]
+  0x03a77830 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-1" [_thread_blocked, id=2664]
+  0x03ad14a8 JavaThread "J3D-SoundStructureUpdateThread-1" [_thread_blocked, id=3620]
+  0x037f6960 JavaThread "J3D-GeometryStructureUpdateThread-1" [_thread_blocked, id=980]
+  0x037fa978 JavaThread "J3D-BehaviorStructureUpdateThread-1" [_thread_blocked, id=212]
+=>0x037d7f28 JavaThread "J3D-Renderer-1" [_thread_in_native, id=944]
+  0x0382f408 JavaThread "J3D-MasterControl-1" [_thread_blocked, id=2872]
+  0x037d85b0 JavaThread "J3D-NotificationThread" [_thread_blocked, id=3436]
+  0x037d8428 JavaThread "J3D-TimerThread" [_thread_blocked, id=3448]
+  0x037d82a0 JavaThread "J3D-RenderingAttributesStructureUpdateThread" [_thread_blocked, id=3028]
+  0x03760620 JavaThread "TimerQueue" daemon [_thread_blocked, id=2972]
+  0x00036390 JavaThread "DestroyJavaVM" [_thread_blocked, id=3320]
+  0x03721c60 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=3444]
+  0x03727328 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3244]
+  0x03727908 JavaThread "AWT-Shutdown" [_thread_blocked, id=1764]
+  0x03a83008 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1692]
+  0x014f15e8 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3604]
+  0x014f0268 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2052]
+  0x014ef618 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3060]
+  0x0003f210 JavaThread "Finalizer" daemon [_thread_blocked, id=3312]
+  0x014c2e00 JavaThread "Reference Handler" daemon [_thread_blocked, id=996]
+
+Other Threads:
+  0x014c0448 VMThread [id=3344]
+  0x014ef348 WatcherThread [id=3612]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4416K, used 617K [0x22b20000, 0x22fe0000, 0x23000000)
+  eden space 3968K,   4% used [0x22b20000, 0x22b4a758, 0x22f00000)
+  from space 448K, 100% used [0x22f70000, 0x22fe0000, 0x22fe0000)
+  to   space 448K,   0% used [0x22f00000, 0x22f00000, 0x22f70000)
+ tenured generation   total 54788K, used 47823K [0x23000000, 0x26581000, 0x26b20000)
+   the space 54788K,  87% used [0x23000000, 0x25eb3ec0, 0x25eb4000, 0x26581000)
+ compacting perm gen  total 8192K, used 3731K [0x26b20000, 0x27320000, 0x2ab20000)
+   the space 8192K,  45% used [0x26b20000, 0x26ec4fe0, 0x26ec5000, 0x27320000)
+    ro space 8192K,  67% used [0x2ab20000, 0x2b07e5d8, 0x2b07e600, 0x2b320000)
+    rw space 12288K,  47% used [0x2b320000, 0x2b8c87f0, 0x2b8c8800, 0x2bf20000)
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.exe
+0x7c910000 - 0x7c9c6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c901000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e4c000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\MSVCRT.dll
+0x10000000 - 0x1002a000 	C:\WINDOWS\SYSTEM32\PAVSKRE.DLL
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f37000 	C:\WINDOWS\system32\GDI32.dll
+0x00320000 - 0x00341000 	C:\WINDOWS\system32\pavipc.dll
+0x66500000 - 0x6650a000 	C:\WINDOWS\system32\wbsys.dll
+0x66600000 - 0x66617000 	C:\Archivos de programa\Stardock\Object Desktop\WindowBlinds\wbhelp.dll
+0x003c0000 - 0x003ec000 	C:\Archivos de programa\Panda Software\Panda Platinum 2005 Internet Security\PAVHOOK.DLL
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x00b80000 - 0x00b9c000 	C:\WINDOWS\system32\SYSTOOLS.dll
+0x770f0000 - 0x7717c000 	C:\WINDOWS\system32\oleaut32.dll
+0x774b0000 - 0x775ed000 	C:\WINDOWS\system32\ole32.dll
+0x01000000 - 0x01032000 	C:\WINDOWS\SYSTEM32\PAVSPROT.DLL
+0x6d730000 - 0x6d8cb000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\client\jvm.dll
+0x76b00000 - 0x76b2e000 	C:\WINDOWS\system32\WINMM.dll
+0x5d160000 - 0x5d167000 	C:\WINDOWS\system32\serwvdrv.dll
+0x5b480000 - 0x5b487000 	C:\WINDOWS\system32\umdmxfrm.dll
+0x6d2f0000 - 0x6d2f8000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\hpi.dll
+0x76bb0000 - 0x76bbb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d700000 - 0x6d70c000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\verify.dll
+0x6d370000 - 0x6d38d000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\java.dll
+0x6d720000 - 0x6d72f000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\zip.dll
+0x6d070000 - 0x6d1d9000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\awt.dll
+0x72f80000 - 0x72fa6000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x76340000 - 0x7635d000 	C:\WINDOWS\system32\IMM32.dll
+0x66000000 - 0x6608e000 	C:\Archivos de programa\Stardock\Object Desktop\WindowBlinds\WBlind.dll
+0x7c9d0000 - 0x7d1ef000 	C:\WINDOWS\system32\SHELL32.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x58c30000 - 0x58cca000 	C:\WINDOWS\system32\COMCTL32.dll
+0x773a0000 - 0x774a3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x5b150000 - 0x5b188000 	C:\WINDOWS\system32\UXTHEME.DLL
+0x76330000 - 0x76335000 	C:\WINDOWS\system32\msimg32.dll
+0x736e0000 - 0x73729000 	C:\WINDOWS\system32\ddraw.dll
+0x73b40000 - 0x73b46000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x6d2b0000 - 0x6d2ef000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\fontmanager.dll
+0x05f70000 - 0x05f8a000 	C:\Archivos de programa\Panda Software\Panda Platinum 2005 Internet Security\pavoepl.dll
+0x05f90000 - 0x05fab000 	C:\Archivos de programa\Panda Software\Panda Platinum 2005 Internet Security\StoreMan.dll
+0x76740000 - 0x76749000 	C:\WINDOWS\system32\SHFOLDER.dll
+0x746b0000 - 0x746fb000 	C:\WINDOWS\system32\MSCTF.dll
+0x06340000 - 0x06355000 	C:\Archivos de programa\Panda Software\Panda Platinum 2005 Internet Security\Firewall\SSSensor.dll
+0x6d530000 - 0x6d543000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\net.dll
+0x71a30000 - 0x71a47000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a20000 - 0x71a28000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6d550000 - 0x6d559000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\nio.dll
+0x6d430000 - 0x6d44f000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\jpeg.dll
+0x6d3d0000 - 0x6d3d6000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\jawt.dll
+0x06290000 - 0x062c0000 	C:\Archivos de programa\Java\jdk1.5.0_09\jre\bin\j3dcore-ogl.dll
+0x5f120000 - 0x5f1ec000 	C:\WINDOWS\system32\OPENGL32.dll
+0x5fea0000 - 0x5fec1000 	C:\WINDOWS\system32\GLU32.dll
+0x69000000 - 0x692be000 	C:\WINDOWS\system32\vticd.dll
+
+VM Arguments:
+java_command: erg2.Test0
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;E:\QUARTUS II\QUARTUS WEB EDITION\bin;E:\QUARTUS II\QUARTUS WEB EDITION\bin;E:\MATLAB7\bin\win32;;C:\Archivos de programa\Panda Software\Panda Platinum 2005 Internet Security\
+USERNAME=user
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 10 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 1 (cores per cpu 1, threads per core 1) family 6 model 10 stepping 0, cmov, cx8, fxsr, mmx, sse, mmxext, 3dnowext, 3dnow
+
+Memory: 4k page, physical 458224k(21752k free), swap 1082604k(291820k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_09-b01) for windows-x86, built on Sep  7 2006 13:59:31 by "java_re" with MS VC++ 6.0
+
